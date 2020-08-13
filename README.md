@@ -53,19 +53,25 @@ git pull origin master
 
 ## Cara Update Repository Milik Orang Lain Melalui Forking
 1. Masuk Ke Folder Repository Hasil Forking
-2. Mengambil data dari repository utama
+2. Menghubungkan Dengan Repo Utama
+
+```
+git remote add upstream https://github.com/Harun1804/sanber-final.git
+```
+
+3. Mengambil data dari repository utama
 
 ```
 git fetch upstream
 ```
 
-3. Memperbaharui Data Repository
+4. Memperbaharui Data Repository
 
 ```
 git pull upstream master
 ```
 
-4. Mengambil data dari repository Hasil Fork
+5. Mengambil data dari repository Hasil Fork
 
 ```
 git pull origin master
