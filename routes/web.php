@@ -17,3 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Auth
+Route::get('/login', 'AuthController@login')->name('login');
+Route::post('/validasi', 'AuthController@validation')->name('validasi');
+Route::get('/register', 'AuthController@register')->name('register');
+Route::post('/register', 'AuthController@makeAccount')->name('daftar');
+Route::get('/logout', 'AuthController@logout')->name('logout');
+
+Route::group(['middleware' => ['auth']], function () {
+    //dashboard
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+});
