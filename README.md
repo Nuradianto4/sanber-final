@@ -93,7 +93,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-5. Pada file .env yang telah dibuat, buat database kosong dengan nama ***db_hibah*** atau bebas
+5. Pada file .env yang telah dibuat, buat database kosong dengan nama ***db_forum*** atau bebas
 6. Kemudian Database Tersebut Atur Di File .env pada key ***DB_DATABASE***
 7. Lakukan Migrasi Database
 
