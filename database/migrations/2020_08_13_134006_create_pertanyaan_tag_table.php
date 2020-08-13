@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePoinPenggunaTable extends Migration
+class CreatePertanyaanTagTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreatePoinPenggunaTable extends Migration
      */
     public function up()
     {
-        Schema::create('poin_pengguna', function (Blueprint $table) {
+        Schema::create('pertanyaan_tag', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('name_id');
-            $table->foreign('name_id')->references('id')->on('users');
-            $table->integer('poin');
+            $table->foreignId('pertanyaan_id')->constrained('pertanyaan');
+            $table->foreignId('tag_id')->constrained('tag');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreatePoinPenggunaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('poin_pengguna');
+        Schema::dropIfExists('pertanyaan_tag');
     }
 }

@@ -16,9 +16,9 @@ class CreateVoteJawabanTable extends Migration
         Schema::create('vote_jawaban', function (Blueprint $table) {
             $table->id('jawaban_id');
             $table->foreign('jawaban_id')->references('id')->on('jawaban');
-            $table->integer('vote');
-            $table->unsignedBigInteger('name_id');
-            $table->foreign('name_id')->references('id')->on('users');
+            $table->foreignId('user_id')->constrained('users');
+            $table->integer('vote_positif');
+            $table->integer('vote_negatif');
             $table->timestamps();
         });
     }

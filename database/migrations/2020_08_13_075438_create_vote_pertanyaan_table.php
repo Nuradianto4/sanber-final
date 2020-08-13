@@ -16,9 +16,9 @@ class CreateVotePertanyaanTable extends Migration
         Schema::create('vote_pertanyaan', function (Blueprint $table) {
             $table->id('pertanyaan_id');
             $table->foreign('pertanyaan_id')->references('id')->on('pertanyaan');
-            $table->integer('vote');
-            $table->unsignedBigInteger('name_id');
-            $table->foreign('name_id')->references('id')->on('users');
+            $table->integer('vote_up');
+            $table->integer('vote_down');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }
