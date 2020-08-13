@@ -7,13 +7,13 @@
 1. Lakukan Clone Repository
 
 ```
-git clone https://github.com/Harun1804/Aplikasi-Hibah-Barang.git
+git clone https://github.com/Harun1804/sanber-final.git
 ```
 
 2. Masuk ke directory
 
 ```
-cd Aplikasi-Hibah-Barang
+cd sanber-final
 ```
 
 ### Jika Ada Perubahan File
