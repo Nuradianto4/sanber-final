@@ -14,7 +14,7 @@
             <p class="lead">{{ $pertanyaan->isi_pertanyaan }}</p>
             <p class="lead">
                 @foreach($pertanyaan->tags as $tag)
-                <span class="btn btn-info btn-xs">{{$tag->name}}</span>
+                <a href="#" class="btn btn-info btn-xs">{{$tag->name}}</a>
                 @endforeach
             </p>
             <hr class="my-4">

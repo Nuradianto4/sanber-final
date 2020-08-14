@@ -65,23 +65,12 @@ class PertanyaanController extends Controller
 
     public function update(Request $request, $id)
     {
-        $tags_arr = implode(",", $request["tags"]);
-        $tag_ids=[];
-        foreach ($tags_arr as $tag_name) {
-            $tag=Tag::where("name",$tag_name)->first();
-            if($tag){
-                $tag_ids[]=$tag->id;
-            }else{
-                $new_tag=Tag::create(["name"=>$tag_name]);
-                $tag_ids[]=$new_tag->id;
-            }
-        }
-
+    
         Pertanyaan::where('id', $id)->update([
             'judul' => $request->judul,
             'isi_pertanyaan' => $request->isi_pertanyaan
         ]);
-        $post->tags()->sync($tag_ids);
+        
         return redirect(route('ownquestion.index'))->with('status', 'Pertanyaan Berhasil Diperbaharui');
     }
 

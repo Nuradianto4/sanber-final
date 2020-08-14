@@ -13,6 +13,7 @@
         <table class="table table-striped">
             
             <tbody>
+                
                 <div class="row">
                     <div class="col-md-4">
 
