@@ -4,6 +4,9 @@
 		        <div class="sidebar-scroll" style="overflow: hidden; width: auto; height: 95%;">
 		            <nav>
 		                <ul class="nav">
+                            <li><a href="{{ route('dashboard') }}"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
+                            <li><a href="{{ route('ownquestion.index') }}"><i class="lnr lnr-list"></i> <span>Own Question</span></a></li>
+                            <li><a href="{{ route('dashboard') }}"><i class="lnr lnr-user"></i> <span>Forum</span></a></li>
 		                    {{-- <li><a href="{{ route('user.index') }}"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 		                    @if (Auth()->User()->role == 'patgtl')
 		                        <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-envelope"></i>

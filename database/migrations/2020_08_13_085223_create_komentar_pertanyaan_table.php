@@ -16,7 +16,7 @@ class CreateKomentarPertanyaanTable extends Migration
         Schema::create('komentar_pertanyaan', function (Blueprint $table) {
             $table->id();
             $table->string('isi_komentar');
-            $table->foreignId('jawaban_id')->constrained('jawaban');
+            $table->foreignId('pertanyaan_id')->constrained('pertanyaan');
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
