@@ -59,4 +59,9 @@ class PertanyaanController extends Controller
         Pertanyaan::destroy($id);
         return redirect(route('ownquestion.index'))->with('status', 'Pertanyaan Berhasil Dihapus');
     }
+
+    public function forum()
+    {
+    	return view('pertanyaan.forum');
+    }
 }

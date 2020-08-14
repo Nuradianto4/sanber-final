@@ -24,6 +24,9 @@ Route::get('/register', 'AuthController@register')->name('register');
 Route::post('/register', 'AuthController@makeAccount')->name('daftar');
 Route::get('/logout', 'AuthController@logout')->name('logout');
 
+
+Route::get('/forum', 'PertanyaanController@forum');
+
 Route::group(['middleware' => ['auth']], function () {
     //dashboard
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
