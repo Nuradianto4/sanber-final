@@ -26,7 +26,7 @@
             </div>
             <div>
                 <div class="form-group">
-                    <label for="tag">Tag</label>
+                    <label for="tags">Tag</label>
                     <input type="text" class="form-control" id="tags" name="tags" placeholder="Pisahkan tag dengan , (koma) tanpa spasi">
                     @error('tags')
                     <div class="alert alert-danger">{{ $message }}</div>
