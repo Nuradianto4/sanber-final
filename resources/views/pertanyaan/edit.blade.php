@@ -25,6 +25,15 @@
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
+            <div>
+                <div class="form-group">
+                    <label for="tag">Tag</label>
+                    <input type="text" class="form-control" id="tags" name="tags" value="{{ $pertanyaan->tag }}" placeholder="Pisahkan tag dengan , (koma) tanpa spasi">
+                    @error('tags')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    </div>
+            </div>
             <button type="submit" class="btn btn-primary">Ubah</button>
         </form>
     </div>

@@ -12,14 +12,17 @@
         <div class="jumbotron">
             <h3 class="display-4">{{ $pertanyaan->judul }}</h3>
             <p class="lead">{{ $pertanyaan->isi_pertanyaan }}</p>
+            <p class="lead">
+                @foreach($pertanyaan->tags as $tag)
+                <a href="#" class="btn btn-info btn-xs">{{$tag->name}}</a>
+                @endforeach
+            </p>
             <hr class="my-4">
             <p>
                 <i class="lnr lnr lnr-thumbs-up mx-3"><span class="label label-success"> 0</span></i>
                 <i class="lnr lnr lnr-thumbs-down mx-3"><span class="label label-danger"> 0</span></i>
             </p>
-            <p class="lead">
-                <span class="label label-info">Tag 1</span>
-            </p>
+            
         </div>
     </div>
     <div class="panel-footer">
