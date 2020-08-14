@@ -25,7 +25,7 @@ Route::post('/register', 'AuthController@makeAccount')->name('daftar');
 Route::get('/logout', 'AuthController@logout')->name('logout');
 
 
-Route::get('/forum', 'PertanyaanController@forum');
+Route::get('/forum', 'PertanyaanController@forum')->name('forum');
 
 Route::group(['middleware' => ['auth']], function () {
     //dashboard

@@ -12,7 +12,8 @@
                     <span class="icon"><i class="lnr lnr-list"></i></span>
                     <p>
                         <span class="number">#</span>
-                        <span class="title">Pertanyaan</span>
+                        <a href=" /pertanyaannya">Pertanyaan</a>
+                        <!-- <span class="title">Pertanyaan</span> -->
                     </p>
                 </div>
             </div>
