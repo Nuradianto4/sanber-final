@@ -28,3 +28,8 @@ Route::group(['middleware' => ['auth']], function () {
     //dashboard
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 });
+Route::get('/pertanyaannya', 'PertanyaanController@index');
+Route::get('/pertanyaannya/create', 'PertanyaanController@create');
+Route::post('/pertanyaannya', 'PertanyaanController@store');
+Route::get('/pertanyaannya/new', 'PertanyaanController@new');
+Route::get('/pertanyaannya/show', 'PertanyaanController@show');
