@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use App\Model\Pertanyaan;
 use Illuminate\Http\Request;
 use App\Model\Tag;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class PertanyaanController extends Controller
 {
     public function index()
     {
-        $pertanyaan = Pertanyaan::orderBy('id', 'desc')->paginate(10);
+        $user=Auth::user();
+        $pertanyaan=$user->forum;
+        // $pertanyaan = Pertanyaan::orderBy('id', 'desc')->paginate(10);
         return view('pertanyaan.index', compact('pertanyaan'));
     }
 
@@ -82,6 +86,8 @@ class PertanyaanController extends Controller
 
     public function forum()
     {
-    	return view('pertanyaan.forum');
+        $forum = Pertanyaan::all();
+
+        return view('pertanyaan.forum', compact('forum'));
     }
 }
