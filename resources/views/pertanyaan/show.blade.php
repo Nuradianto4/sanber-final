@@ -28,12 +28,9 @@
             <hr class="my-4">
             <form role="form" action="/komentar_pertanyaan" method="POST">
             @csrf
-                <div class="input-group">
+                <input type="hidden" name="id_per" value="{{$pertanyaan->id}}">
                  <input class="form-control" placeholder="Komentari Pertanyaan ini" name="komentar_pertanyaan" type="text">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">Gas!</button>
-                    </span>
-                </div><br>
+                
             </form>
             <div class="alert alert-info alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
@@ -56,11 +53,11 @@
         <i class="lnr lnr lnr-thumbs-down mx-3"><span class="label label-danger"> 0</span></i>
         <br><br>
         <div class="input-group">
-            <input class="form-control" placeholder="Komentari Jawaban ini" name="komentar_jawaban" type="text">
-            <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">Gas!</button>
-            </span>
-            </div><br>
+            <form role="form" action="/komentar_pertanyaan" method="POST">
+            @csrf
+                 <input type="hidden" name="id_jawaban" value="panggil id jawaban">
+                 <input class="form-control" placeholder="Komentari Jawaban ini" name="komentar_jawaban" type="text"></div><br>
+        </form>
         <div class="alert alert-info alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                     aria-hidden="true">×</span></button>
