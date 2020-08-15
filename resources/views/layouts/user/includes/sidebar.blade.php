@@ -5,7 +5,7 @@
 		            <nav>
 		                <ul class="nav">
                             <li><a href="{{ route('dashboard') }}"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
-                            <li><a href="{{ route('ownquestion.index') }}"><i class="lnr lnr-list"></i> <span>Own Question</span></a></li>
+                            <li><a href="{{ route('ownquestion.index') }}"><i class="lnr lnr-list"></i> <span>Pertanyaan Anda</span></a></li>
                             <li><a href="{{ route('forum') }}"><i class="lnr lnr-user"></i> <span>Forum</span></a></li>
 		                    {{-- <li><a href="{{ route('user.index') }}"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 		                    @if (Auth()->User()->role == 'patgtl')

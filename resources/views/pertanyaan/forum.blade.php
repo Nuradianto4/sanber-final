@@ -15,68 +15,35 @@
             <tbody>
                 
                 <div class="row">
-                    <div class="col-md-4">
-
-                        <!-- PANEL DEFAULT -->
-                        <div class="panel">
-
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Nama User</h3>
-                                
-                            </div>
-                            <div class="panel-body">
-                                <h3>Judul Pertanyaan</h3>
-                                <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
-                            </div>
-                            <div class="panel-footer">
-                                <button type="button" class="btn btn-primary">SHOW</button>
-                            </div>
-                        </div>
-                        <!-- END PANEL DEFAULT -->
-
-                    </div>
-                    
-                    <div class="col-md-4">
-
-                        <!-- PANEL NO CONTROLS -->
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Nama User</h3>
-                            </div>
-                            <div class="panel-body">
-                                <h3>Judul Pertanyaan</h3>
-                                <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
-                            </div>
-                            <div class="panel-footer">
-                                <button type="button" class="btn btn-primary">SHOW</button>
-                            </div>
-                        </div>
-                        <!-- END PANEL NO CONTROLS -->
-
-                    </div>
-
+                    @foreach($forum as $data)
                     <div class="col-md-4">
 
                         <!-- PANEL WITH FOOTER -->
                         <div class="panel">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Nama User</h3>
+                                <h3 class="title">{{$data->author->name }}</h3>
+                                <span class="date">{{$data->created_at}}</span>
                             </div>
                             <div class="panel-body">
-                                <h3>Judul Pertanyaan</h3>
-                                <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
+                                <h3>{{$data->judul}}</h3>
+                                <p>{{$data->isi_pertanyaan}}</p>
                                 <p class="lead">
-                                    <span class="label label-warning">Tag 1</span>
+                                    @forelse($data->tags as $tag) <!-- tags berasal dari model -->
+                                    <a href="#" class="btn btn-warning btn-xs">{{$tag->name}}</a>
+                                    @empty
+                                    <button class="btn btn-warning btn-xs">Pertanyaan Ini Tidak Memiliki Tag</button>
+                                    @endforelse
                                 </p>
                             </div>
                             
                             <div class="panel-footer">
-                                <button type="button" class="btn btn-primary">SHOW</button>
+                                <a href="{{ url('/ownquestion/'.$data->id) }}" class="btn btn-sm btn-info">Show</a>
                             </div>
                         </div>
                         <!-- END PANEL WITH FOOTER -->
 
                     </div>
+                    @endforeach
                 </div>
                
             </tbody>
