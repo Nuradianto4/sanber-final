@@ -33,3 +33,4 @@ Route::group(['middleware' => ['auth']], function () {
     //own Question
     Route::resource('/ownquestion', 'PertanyaanController');
 });
+Route::post('/komentar_pertanyaan','KomentarController@store')->name('komenper');
